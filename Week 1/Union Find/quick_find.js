@@ -26,11 +26,11 @@ class quickFind{
 if (require.main === module) {
     const arr = [1,2,3,4,5,6,1]
     const qf = new quickFind(arr)
-    qf.union(0, 7)
+    qf.union(0, 6)
     qf.union(1, 3)
-    qf.union(2, 7)
-    console.log(qf.connected(0,7)) // true
+    qf.union(2, 6)
+    console.log(qf)
+    console.log(qf.connected(0,6)) // true
     console.log(qf.connected(0,2)) // true
     console.log(qf.connected(2,3)) // false
-
 }

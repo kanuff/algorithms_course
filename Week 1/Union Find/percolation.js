@@ -100,13 +100,18 @@ if (require.main === module) {
     const N = 100
     const simulations = 100
     const tries = []
+    console.log(`\n\n############################### \n`)
+    console.log(`Running percolation simulation for a(n) ${N} x ${N} grid`)
+    console.log(`\n`)
     for(let i = 0; i < simulations; i++){
         const perc = new percolation(N)
         tries.push(perc.runSim())
     }
-    console.log(tries)
+    // console.log(tries)
     const sum = tries.reduce( ( acc, el ) => acc + el)
-    console.log( sum / (simulations * (N**2) ) )
+    const p = sum / (simulations * (N**2) )
+    console.log(`For a(n) ${N} x ${N} grid, a site vacancy probability "p" > ${p} will almost certainly guarantee percolation`)
+    console.log(`\n############################### \n\n`)
 
 
 }
